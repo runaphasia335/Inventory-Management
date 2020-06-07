@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.AddPartController">
+    <top>
+        <GridPane BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="142.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="125.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+
+            </rowConstraints>
+            <children>
+                <Label text="Add Part">
+                    <GridPane.margin>
+                        <Insets left="15.0" top="15.0" />
+                    </GridPane.margin>
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font></Label>
+                <fx:define>
+                    <ToggleGroup fx:id="partButtonGroup" />
+                </fx:define>
+                <RadioButton mnemonicParsing="false"  text="In-House" GridPane.columnIndex="1" GridPane.halignment="RIGHT" onAction="#actionRadioButton" fx:id="radioInHouse" toggleGroup="$partButtonGroup">
+                    <GridPane.margin>
+                        <Insets right="15.0" top="15.0" />
+                    </GridPane.margin>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="oartButtonGroup" />
+                    </toggleGroup></RadioButton>
+                <RadioButton mnemonicParsing="false"  text="Outsourced"  GridPane.columnIndex="2" onAction="#actionRadioButton" fx:id="radioOutsource" toggleGroup="$partButtonGroup">
+                    <GridPane.margin>
+                        <Insets top="15.0" />
+                    </GridPane.margin></RadioButton>
+            </children>
+        </GridPane>
+    </top>
+    <bottom>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="saveButton" mnemonicParsing="false"  text="Save" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="75.0" onAction="#actionSavePart" />
+                <Button mnemonicParsing="false"  text="Cancel" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0" onAction="#actionCancelButton" fx:id="cancelButton"/>
+            </children>
+        </AnchorPane>
+    </bottom>
+    <center>
+        <GridPane minWidth="-Infinity" prefHeight="353.0" prefWidth="283.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="176.0" minWidth="2.0" prefWidth="151.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="296.0" minWidth="10.0" prefWidth="249.0" />
+
+            </columnConstraints>
+            <rowConstraints>
+
+                <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="61.0" minHeight="0.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="111.0" minHeight="14.0" prefHeight="101.0" />
+            </rowConstraints>
+            <children>
+                <Label text="ID">
+                    <GridPane.margin>
+                        <Insets left="50.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label text="Name" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="50.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label text="Inv" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets left="50.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label text="Price" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets left="50.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label text="Max" GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets left="50.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label text="Min" GridPane.rowIndex="5">
+                    <GridPane.margin>
+                        <Insets left="50.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="toggleLabel"  GridPane.rowIndex="6" GridPane.valignment="TOP">
+                    <GridPane.margin>
+                        <Insets left="50.0" top="15.0" />
+                    </GridPane.margin>
+                </Label>
+                <TextField fx:id="idField" editable="false" minWidth="-Infinity" prefWidth="200.0" promptText="AUTO-GEN" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin></TextField>
+                <TextField fx:id="nameField" minWidth="-Infinity" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin></TextField>
+                <TextField fx:id="inventoryField" minWidth="-Infinity" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin></TextField>
+                <TextField fx:id="priceField" minWidth="-Infinity" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin></TextField>
+                <TextField fx:id="maxField" minWidth="-Infinity" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin></TextField>
+                <TextField fx:id="minField" minWidth="-Infinity" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin></TextField>
+                <TextField fx:id="toggleField" minWidth="-Infinity" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                    <GridPane.margin>
+                        <Insets right="15.0" top="15.0" />
+                    </GridPane.margin>
+                </TextField>
+            </children>
+        </GridPane>
+    </center>
+</BorderPane>
